@@ -26,7 +26,7 @@ done before working with this repository.
 4. Install Twython
     Now that your Python virtual environment is turned on you should be able to install Twython with:
 
-    pip install twython
+    `pip install twython`
 
     But if you have any issues you can check the 
     documentation here: 
