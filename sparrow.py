@@ -3,27 +3,19 @@ import random
 import json
 from twython import Twython
 
-# Credentials setup
-# Loads in 'creds.json' values as a dictionary
-with open('creds.json') as f:
-    credentials = json.loads(f.read())
-
-# Sets config values from the config file
-CONSUMER_KEY = credentials["consumer_key"]
-CONSUMER_SECRET = credentials["consumer_secret"]
-ACCESS_TOKEN_KEY = credentials["access_token_key"]
-ACCESS_TOKEN_SECRET = credentials["access_token_secret"]
+# Normally, NEVER put your credentials in a file like this
+# These are credentials for a throwaway account
+CONSUMER_KEY = "TFC1fmZfczFsGMQxzxNVWfl8r"
+CONSUMER_SECRET = "qZcUSG1tHz3szLukxAEXhnbEcupVYo6XjrGGD3Z1cy1PNw1s0n"
+ACCESS_TOKEN_KEY = "730011964911407105-YRqShkDRTOq83F24kgTuHN7fmibSjCD"
+ACCESS_TOKEN_SECRET = "SupI50NhW8EEl1HJ6zO5YODwdefo9qqCTKSVwWW1LmpM7"
 
 # Create the Twython Twitter client using our credentials
 twitter = Twython(CONSUMER_KEY, CONSUMER_SECRET,
                   ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET)
 
 # Sample random tweets
-potential_tweets = [
-    'This is my first tweet with Sparrow - https://github.com/fernando-mc/sparrow',
-    'Wow! Isn\'t Python fun!! Look at me tweeting with Python https://github.com/fernando-mc/sparrow',
-    'Everyone should learn about #Python'
-]
+potential_tweets = [ ] # Add your own tweets (as a string) in here!
 
 def send_tweet():
     """Sends a random tweet to Twitter from a list of potential tweets"""
@@ -31,3 +23,6 @@ def send_tweet():
     twitter.update_status(status = tweet)
 
 send_tweet()
+
+# Then check for the Tweet here:
+# https://twitter.com/salutations_bot
